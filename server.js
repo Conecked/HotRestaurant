@@ -16,9 +16,9 @@ app.use(bodyParser.json());
 /*
   [
     {
-      Name: Derp,
-      PhoneNumber: 123456789,
-      Email: derp@derp.com,
+      name: Derp,
+      phoneNumber: 123456789,
+      email: derp@derp.com,
       id: 222 
     }
   ]
@@ -52,8 +52,11 @@ app.post("/api/makereservation", function(req, res) {
 });
 
 app.post("/api/makereservation", function(req, res) {
-  res.json("Derp");
+  let reservation = req.body;
+  reservations.push(reservation);
+  res.json(reservation);
 });
+
 
 app.listen(PORT, function(err) {
   console.log("Listening on PORT",PORT);
