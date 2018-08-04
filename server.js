@@ -3,7 +3,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
-var inquirer = require("inquirer");
 
 // Sets up the Express App
 // =============================================================
@@ -17,7 +16,15 @@ app.use(bodyParser.json());
 // Routes
 // =============================================================
 
-// Basic route that sends the user first to the fetch Page
+// Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
   });
+
+app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+app.get("/reserve", function(reg, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
+});
