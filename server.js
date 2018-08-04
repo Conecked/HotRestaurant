@@ -21,16 +21,20 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
   });
 
-<<<<<<< HEAD
 app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-app.get("/reserve", function(reg, res) {
+app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
-=======
+
+// Display current reservations
+app.get("/api/current", function(req, res) {
+    res.json(reservations)
+});
+
+
 app.post("/api/makereservation", function(req, res) {
   console.log("Is you makin a post boi?!");
 })
->>>>>>> 9750485df2f28200658cd16e1797c79507fe323f
