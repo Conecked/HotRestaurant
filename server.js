@@ -18,4 +18,6 @@ app.use(bodyParser.json());
 // =============================================================
 
 // Basic route that sends the user first to the fetch Page
-
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "home.html"));
+  });
