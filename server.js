@@ -41,11 +41,22 @@ app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
+// Display current reservations
+app.get("/api/current", function(req, res) {
+    res.json(reservations)
+});
+
+
+app.post("/api/makereservation", function(req, res) {
+  console.log("Is you makin a post boi?!");
+});
+
 app.post("/api/makereservation", function(req, res) {
   let reservation = req.body;
   reservations.push(reservation);
   res.json(reservation);
-})
+});
+
 
 app.listen(PORT, function(err) {
   console.log("Listening on PORT",PORT);
