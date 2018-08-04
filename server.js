@@ -25,8 +25,6 @@ app.use(bodyParser.json());
 */
 let reservations = [];
 
-
-
 // Routes
 // =============================================================
 
@@ -51,11 +49,12 @@ app.get("/api/current", function(req, res) {
 
 app.post("/api/makereservation", function(req, res) {
   console.log("Is you makin a post boi?!");
+});
+
+app.post("/api/makereservation", function(req, res) {
   res.json("Derp");
-})
+});
 
 app.listen(PORT, function(err) {
   console.log("Listening on PORT",PORT);
 });
-
-  
