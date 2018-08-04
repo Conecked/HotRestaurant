@@ -8,10 +8,24 @@ var path = require("path");
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 3000;
-
-// Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// Variables
+// =============================================================
+/*
+  [
+    {
+      Name: Derp,
+      PhoneNumber: 123456789,
+      Email: derp@derp.com,
+      id: 222 
+    }
+  ]
+*/
+let reservations = [];
+
+
 
 // Routes
 // =============================================================
@@ -22,5 +36,9 @@ app.get("/", function(req, res) {
   });
 
 app.post("/api/makereservation", function(req, res) {
-  console.log("Is you makin a post boi?!");
+  res.json("Derp");
 })
+
+app.listen(PORT, function(err) {
+  console.log("Listening on PORT",PORT);
+});
