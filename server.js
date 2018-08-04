@@ -30,15 +30,29 @@ let reservations = [];
 // Routes
 // =============================================================
 
-// Basic route that sends the user first to the fetch Page
+// Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
   });
 
+
+app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+app.get("/reserve", function(reg, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
+});
+
 app.post("/api/makereservation", function(req, res) {
+
   res.json("Derp");
 })
 
 app.listen(PORT, function(err) {
   console.log("Listening on PORT",PORT);
 });
+
+  console.log("Is you makin a post boi?!");
+})
+
