@@ -3,7 +3,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
-var inquirer = require("inquirer");
 
 // Sets up the Express App
 // =============================================================
@@ -21,3 +20,7 @@ app.use(bodyParser.json());
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
   });
+
+app.post("/api/makereservation", function(req, res) {
+  console.log("Is you makin a post boi?!");
+})
