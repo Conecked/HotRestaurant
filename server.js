@@ -21,6 +21,7 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
   });
 
+<<<<<<< HEAD
 app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
@@ -28,3 +29,8 @@ app.get("/tables", function(req, res) {
 app.get("/reserve", function(reg, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
+=======
+app.post("/api/makereservation", function(req, res) {
+  console.log("Is you makin a post boi?!");
+})
+>>>>>>> 9750485df2f28200658cd16e1797c79507fe323f
